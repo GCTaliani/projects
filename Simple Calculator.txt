@@ -1,0 +1,56 @@
+#include <iostream>
+#include <array>
+#include <string_view>
+#include <tuple>
+#include <type_traits>
+#include <string>
+
+
+ double getInputFromUser()
+
+{
+	std::cout << "Enter a double value: ";
+	double input{};
+	std::cin >> input;
+
+	return input;
+}
+
+
+int main()
+
+{	
+	double x{ getInputFromUser() };
+	double y{ getInputFromUser() };
+	double z{};
+
+
+	std::cout << "Enter one of the following: +, -, *, or /: ";
+	std::string input{};
+	std::getline(std::cin >> std::ws, input);
+
+	if (input == "+")
+	{
+		z = (x + y);
+	std::cout << "x + y is: " << z ;
+	}
+	else if (input == "-")
+	{
+		z = (x - y);
+		std::cout << "x - y is: " << z ;
+	}
+	else if (input == "*")
+	{
+		z = (x * y);
+		std::cout << "x * y is: " << z ;
+	}
+	else if (input == "/")
+	{
+		z = (x / y);
+		std::cout << "x / y is: " << z ;
+	}
+	else
+	{
+		std::cout << "You didn't input the requested!";
+	}
+}
